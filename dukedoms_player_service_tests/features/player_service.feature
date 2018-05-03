@@ -2,13 +2,13 @@
 
 Feature: Game Service
 Background: Clear Player Service DB
-  Given an empty player service db
+  Given an empty player service database
 
 Scenario: Player Service Receives Request To Create New Player
   When player service receives new player request
     | account_id | game_id |
     | 1337       | 13387   |
-  Then it returns a welcome packet with new player id
+  Then player service returns a welcome packet with new player id
   When player service is queried for that player's info
   Then it returns player info with
     | account_id | game_id | game_status |
@@ -24,8 +24,6 @@ Scenario: Player Service Receives Activate Player Request
   Then it returns player info with
     | account_id | game_id | game_status | turn_phase |
     | 1337       | 13387   | active      | action     |
-
-
 
 @wip
 Scenario: Player Service Receives Phase Change Request
