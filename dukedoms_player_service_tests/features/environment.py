@@ -17,7 +17,10 @@ def get_environment_variables(env):
     else:
         return URLS.container
 
-def before_step(context, step):
+def before_scenario(context, scenario):
+
+    context.player_ids = {}
+
     config = {
         'also_return_response': True,
         'validate_responses': True,
