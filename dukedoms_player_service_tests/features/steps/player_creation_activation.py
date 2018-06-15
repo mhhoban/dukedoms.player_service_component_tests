@@ -20,6 +20,15 @@ def new_player_request(context):
     context.welcome_packet = result
     context.player_ids[str(account_id)] = context.welcome_packet.player_id
 
+@given('a player with state')
+def new_player_with_state(context):
+    """
+    create a new player with a pre-defined state
+    """
+    new_player_request(context)
+    activate_pending_player(context, context.table.rows[0]['turn_phase'])
+
+
 @then('player service returns a welcome packet with player id for account "{account_id}"')
 def assert_welcome_packet_received(context, account_id):
     """
