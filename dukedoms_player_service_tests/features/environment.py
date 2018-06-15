@@ -17,7 +17,7 @@ def get_environment_variables(env):
     else:
         return URLS.container
 
-def before_step(context, step):
+def before_scenario(context, scenario):
 
     context.player_ids = {}
 
