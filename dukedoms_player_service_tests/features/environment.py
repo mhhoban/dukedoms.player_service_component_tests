@@ -9,7 +9,7 @@ def get_environment_variables(env):
     URLS.local.player_service = 'http://localhost:5004'
     URLS.local.player_service_db = 'postgresql+psycopg2://postgres:daleria@127.0.0.1:5432/player_service'
 
-    URLS.container.player_service = 'http://player-service:5004'
+    URLS.container.player_service = 'http://player-service:8080'
     URLS.container.player_service_db = 'postgresql+psycopg2://postgres:daleria@dukedoms-rdbs:5432/player_service'
 
     if env == 'local':
